@@ -18,3 +18,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::resource('mahasiswa', MahasiswaController::class);
+Route::get('sampah', [MahasiswaController::class, 'listsampah'])->name('list.sampah');
+Route::get('sampah/mahasiswa/restore/{id?}', [MahasiswaController::class,'restore'])->name('sampah.mahasiswa.restore');
+Route::delete('sampah/mahasiswa/delete/{id?}', [MahasiswaController::class,'delete'])->name('sampah.mahasiswa.delete');
